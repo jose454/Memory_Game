@@ -1,0 +1,51 @@
+body {
+    margin: 0 auto;
+    background: black;
+}
+h1 {
+    text-shadow: 
+    0 0 6px white,
+    0 0 1px white,
+    0 0 20px white,
+    0 0 40px white,
+    0 0 1px white,
+    0 0 90px white,
+    0 0 0px white,
+    0 0 3px white;
+    font-family: consolas;
+    text-align: center;
+    color: transparent;
+}
+#game-field {
+    background: none;
+    width: 54vh;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -37vh;
+    margin-left: -28vh;
+    padding: 1vh;
+    border-radius: 2vh;
+}
+.cards {
+    /* background-size: cover; */
+    width: 11vh;
+    height: 15vh;
+    border: 0.25vh solid white;
+    margin: 1vh;
+    border-radius: 2vh;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.cards:hover {
+    transition: 0.4s;
+    background: white;
+}
+.card-properties {
+    display: none;
+    background: white;
+}
