@@ -40,14 +40,10 @@ h1 {
     border: 0.25vh solid white;
     margin: 1vh;
     border-radius: 2vh;
+    background: white;
     cursor: pointer;
     transition: 0.4s;
 }
 .cards:hover {
     transition: 0.4s;
-    background: white;
-}
-.card-properties {
-    display: none;
-    background: white;
 }

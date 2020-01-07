@@ -8,16 +8,19 @@ function create_cards (){
             background: 'white',
             value: 0};//value 0, a carta está virada, value 1, a carta está desvirada
         cards[k].div.setAttribute('class', 'cards');
+        cards[k].div.style.transform = 'rotateY(180deg)';
         document.getElementById('game-field').appendChild(cards[k].div);
+
+        cards[k].div.setAttribute('onclick', 'turn_card(' + k + ')');
     }
-    define_bakground_cards();
+    define_background_cards();
 }
 
 var par = 0;
 var cont = 0;
 var card;
 
-function define_bakground_cards (){
+function define_background_cards (){
     for (k = 0 ; k < 16 ; k++){
         cont++;
         //Math.floor(Math.random() * (max - min + 1) + min)
@@ -59,7 +62,7 @@ function define_bakground_cards (){
             cont--;
         }
     }
-    set_colors();
+    // set_colors();
 }
 
 function set_colors (){
@@ -68,4 +71,11 @@ function set_colors (){
         cards[k].div.style.backgroundSize = 'cover';
         cards[k].div.style.backgroundPosition = 'center';
     }
+}
+
+function turn_card (i){
+    cards[i].div.style.transform = 'rotateY(0deg)';
+    cards[i].div.style.background = cards[i].background;
+    cards[i].div.style.backgroundSize = 'cover';
+    cards[i].div.style.backgroundPosition = 'center';
 }
