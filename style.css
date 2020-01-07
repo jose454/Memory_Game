@@ -1,9 +1,10 @@
 body {
     margin: 0 auto;
-    background: black;
+    /* background: rgb(165, 165, 165); */
+    background: radial-gradient(circle, rgb(165, 165, 165), transparent);
 }
 h1 {
-    text-shadow: 
+    /*text-shadow: 
     0 0 6px white,
     0 0 1px white,
     0 0 20px white,
@@ -11,10 +12,11 @@ h1 {
     0 0 1px white,
     0 0 90px white,
     0 0 0px white,
-    0 0 3px white;
-    font-family: consolas;
+    0 0 3px white;*/
+    font-family: 'Lobster', cursive;
     text-align: center;
-    color: transparent;
+    /* color: transparent; */
+    color: rgb(73, 119, 119);
 }
 #game-field {
     background: none;
