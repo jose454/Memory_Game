@@ -69,6 +69,9 @@ function define_background_cards (){
             cont--;
         }
     }
+
+    setIDsToCards(cards);
+
 }
 
 //Função para virar e desvirar card
@@ -99,7 +102,8 @@ var ind;
 //Funções Auxiliares
 
 function controlarMovimento(i) {
-   if (document.querySelector('.active') !== null && ind!==i) {
+
+    if (document.querySelector('.active') !== null && ind!==i) {
         count++;
         arr.push(cards[i]);
         ind = i;
@@ -109,10 +113,39 @@ function controlarMovimento(i) {
             arr = [];
         }
    }
+   
+}
+
+function setIDsToCards(cards){
+
+    let checkedCards = [];
+
+    cards.forEach(card=>{
+
+        let equal = checkedCards.find(el=>{
+            if (el.background == card.background) return el;
+        });
+
+        if (equal) {
+            card.id = equal.id;
+        } else {
+
+            let id = Math.floor(Math.random() * (100 - 1)) + 1;
+            checkedCards.push({
+                background: card.background,
+                id
+            });
+
+            card.id = id;
+
+        }
+
+    });
+
 }
 
 function verificarIgualdade(arr) {
-    if(arr[0].background === arr[1].background) {
+    if(arr[0].id === arr[1].id) {
         console.log('acertou');
         arr[0].div.removeAttribute('onclick');
         arr[1].div.removeAttribute('onclick');
@@ -124,4 +157,3 @@ function verificarIgualdade(arr) {
         },500);
     }
 }
-
