@@ -1,26 +1,33 @@
-var cards = new Array(16);
-var k;
+var cards = [];
 
-function create_cards (){
-    for (k = 0 ; k < 16 ; k++){
-        cards[k] = {
-            div: document.createElement('div'),
-            background: 'white',
-            value: 0};//value 0, a carta está virada, value 1, a carta está desvirada
-        cards[k].div.setAttribute('class', 'cards');
-        cards[k].div.style.transform = 'rotateY(180deg)';
-        document.getElementById('game-field').appendChild(cards[k].div);
+var gameField = document.getElementById('game-field');
+gameField.onload = create_cards();
 
-        cards[k].div.setAttribute('onclick', 'turn_card(' + k + ')');
-    }
-    define_background_cards();
+function CardsInfo(div,background,value) {
+    this.div = div;
+    this.background = background;
+    this.value = value;
 }
 
-var par = 0;
-var cont = 0;
-var card;
+function create_cards() {
+    for (var k=0;k<16;k++) {
+        cards[k] = new CardsInfo(document.createElement('div'),'white',0);
+        cards[k].div.setAttribute('class','cards');
+        gameField.appendChild(cards[k].div);
+
+        cards[k].div.setAttribute('onclick','ativaClasse(' + k + ')');
+    }
+    define_background_cards();
+    setTimeout(showAllCards,1000);
+    setTimeout(hideCards,2000);
+
+}
 
 function define_background_cards (){
+    var par = 0;
+    var cont = 0;
+    var card;
+
     for (k = 0 ; k < 16 ; k++){
         cont++;
         //Math.floor(Math.random() * (max - min + 1) + min)
@@ -62,20 +69,21 @@ function define_background_cards (){
             cont--;
         }
     }
-    // set_colors();
 }
 
-function set_colors (){
-    for (k = 0 ; k < 16 ; k++){
-        cards[k].div.style.background = cards[k].background;
-        cards[k].div.style.backgroundSize = 'cover';
-        cards[k].div.style.backgroundPosition = 'center';
+function ativaClasse(i) {
+    cards[i].div.style.backgroundImage = cards[i].background;
+    cards[i].div.classList.toggle('active');
+}
+
+function showAllCards() {
+    for (var k=0;k<16;k++) {
+        ativaClasse(k);
     }
 }
 
-function turn_card (i){
-    cards[i].div.style.transform = 'rotateY(0deg)';
-    cards[i].div.style.background = cards[i].background;
-    cards[i].div.style.backgroundSize = 'cover';
-    cards[i].div.style.backgroundPosition = 'center';
+function hideCards() {
+    for (var k=0;k<16;k++) {
+        cards[k].div.classList.remove('active');
+    }
 }

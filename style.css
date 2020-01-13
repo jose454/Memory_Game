@@ -43,7 +43,15 @@ h1 {
     background: white;
     cursor: pointer;
     transition: 0.4s;
+
+    transform: rotateY(180deg);
 }
 .cards:hover {
     transition: 0.4s;
+}
+
+.active {
+    transform: rotateY(0deg);
+    background-size: cover;
+    background-position: center;
 }
