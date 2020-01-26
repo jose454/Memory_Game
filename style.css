@@ -4,18 +4,9 @@ body {
     background: radial-gradient(circle, rgb(165, 165, 165), transparent);
 }
 h1 {
-    /*text-shadow: 
-    0 0 6px white,
-    0 0 1px white,
-    0 0 20px white,
-    0 0 40px white,
-    0 0 1px white,
-    0 0 90px white,
-    0 0 0px white,
-    0 0 3px white;*/
     font-family: 'Lobster', cursive;
+    font-size: 5vh;
     text-align: center;
-    /* color: transparent; */
     color: rgb(73, 119, 119);
 }
 #game-field {
@@ -54,4 +45,22 @@ h1 {
     transform: rotateY(0deg);
     background-size: cover;
     background-position: center;
+}
+#info-jogadas {
+    color: rgb(73, 119, 119);
+    font-family: 'Lobster', cursive;
+    font-size: 2.8vh;
+    position: absolute;
+    left: 50%;
+    top: 83%;
+    margin-left: -12vh;
+}
+#reload {
+    font-size: 4vh;
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    margin-left: -2vh;
+    cursor: pointer;
+    color: rgb(73, 119, 119);
 }
