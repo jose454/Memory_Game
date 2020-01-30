@@ -7,12 +7,7 @@ vez.innerHTML = vezJogador;
 let jogador1 = 0; //Pontuação dos jogadores
 let jogador2 = 0;
 
-var numero_de_jogadas = 16;
-
 var pares_nao_encontrados = 8;
-
-var info_jogadas_restantes = document.getElementById('jogadas-restantes');
-info_jogadas_restantes.innerText = numero_de_jogadas;
 
 var gameField = document.getElementById('game-field');
 gameField.onload = create_cards();
@@ -198,30 +193,16 @@ function verificarIgualdade(arr) {
             arr[1].div.style.backgroundSize = 'cover';
         }, 500);
     }
-    if (numero_de_jogadas > 0) {
-        numero_de_jogadas--;
-    }
-    if (numero_de_jogadas == 0) {
-        end_game();
-    }
     if (pares_nao_encontrados == 0) {
         end_game();
     }
-    info_jogadas_restantes.innerText = numero_de_jogadas;
 }
 
 function end_game() {
-    let cartas_nao_descobertas = 0;
     for (k = 0; k < 16; k++) {
         if (cards[k].value == 0) {
             cards[k].div.removeAttribute('onclick');
-            cartas_nao_descobertas++;
         }
-    }
-    if (cartas_nao_descobertas == 0) {
-        alert('Você ganhou!, conseguiu encontrar todos os pares');
-    } else {
-        alert('Você perdeu!, não conseguiu encontrar todos os pares');
     }
     alert(`Jogador1: ${jogador1} pontos.\nJogador2: ${jogador2} pontos.`)
     if (jogador1 > jogador2)
