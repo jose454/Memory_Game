@@ -3,12 +3,15 @@ body {
     /* background: rgb(165, 165, 165); */
     background: radial-gradient(circle, rgb(165, 165, 165), transparent);
 }
+
 h1 {
     font-family: 'Lobster', cursive;
     font-size: 5vh;
     text-align: center;
     color: rgb(73, 119, 119);
+    margin: 10px;
 }
+
 #game-field {
     background: none;
     width: 54vh;
@@ -19,11 +22,12 @@ h1 {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -37vh;
+    margin-top: -40vh;
     margin-left: -28vh;
     padding: 1vh;
     border-radius: 2vh;
 }
+
 .cards {
     /* background-size: cover; */
     width: 11vh;
@@ -37,6 +41,7 @@ h1 {
 
     transform: rotateY(180deg);
 }
+
 .cards:hover {
     transition: 0.4s;
 }
@@ -46,15 +51,27 @@ h1 {
     background-size: cover;
     background-position: center;
 }
+
 #info-jogadas {
     color: rgb(73, 119, 119);
     font-family: 'Lobster', cursive;
     font-size: 2.8vh;
     position: absolute;
     left: 50%;
-    top: 83%;
+    top: 80%;
     margin-left: -12vh;
 }
+
+#vezDoJogador {
+    color: rgb(73, 119, 119);
+    font-family: 'Lobster', cursive;
+    font-size: 2.8vh;
+    position: absolute;
+    left: 50%;
+    top: 83.75%;
+    margin-left: -12vh;
+}
+
 #reload {
     font-size: 4vh;
     position: absolute;
